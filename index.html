@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maksym Paderin - CV</title>
 
-    <link rel="stylesheet" href="red.css">
+    <link id="theme" rel="stylesheet" href="red.css">
 </head>
 <body>
 
@@ -13,8 +13,11 @@
     <h1>Maksym Paderin</h1>
 </header>
 
+<button onclick="changeTheme()">Zmień motyw</button>
+<button onclick="toggleSection()">Pokaż/Ukryj sekcję</button>
+
 <main>
-    <section>
+    <section id="toggleSection">
         <h2>Kontakt</h2>
 
         <p>Email: <a href="mailto:mpaderi1@stu.vistula.edu.pl">mpaderi1@stu.vistula.edu.pl</a></p>
@@ -118,6 +121,8 @@
 <footer>
     <p>© 2026 Maksym Paderin</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -16,7 +16,7 @@ function toggleSection() {
     }
 }
 
-// ZAD 5:
+
 
 function sprawdzFormularz() {
     var imie      = document.getElementById("imie").value.trim();
@@ -29,7 +29,6 @@ function sprawdzFormularz() {
     ukryjBlad("err-email");
     ukryjBlad("err-wiadomosc");
     ukryjBlad("sukces");
-
 
     var poprawny = true;
 
@@ -83,3 +82,29 @@ function poprawnyEmail(email) {
     var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
 }
+
+
+
+fetch("data.json")
+    .then(response => response.json())
+    .then(data => {
+
+        let ul = document.getElementById("umiejetnosci-list");
+
+        data.umiejetnosci.forEach(item => {
+            let li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
+        });
+
+        let ulProj = document.getElementById("projekty-list");
+
+        data.projekty.forEach(projekt => {
+            let li = document.createElement("li");
+
+            li.innerHTML = "<strong>" + projekt.nazwa + "</strong> - " + projekt.opis;
+
+            ulProj.appendChild(li);
+        });
+
+    });

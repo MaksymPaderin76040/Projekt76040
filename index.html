@@ -82,6 +82,20 @@
         <ul id="projekty-list"></ul>
     </section>
 
+    <!-- zad7 -->
+    <section id="notatki-section">
+        <h2>Notatki</h2>
+        <p style="color: #777; font-size: 14px;">Twoje notatki są zapisywane lokalnie w przeglądarce i pozostają po odświeżeniu strony.</p>
+
+        <div id="notatki-form">
+            <input type="text" id="notatka-input" placeholder="Wpisz notatkę..." style="width: 70%; padding: 8px; font-size: 14px;">
+            <button onclick="dodajNotatke()">Dodaj</button>
+            <p id="err-notatka" style="color: red; display: none;">Notatka nie może być pusta.</p>
+        </div>
+
+        <ul id="notatki-list" style="margin-top: 15px; padding-left: 0; list-style: none;"></ul>
+    </section>
+
     <section>
         <h2>Formularz kontaktowy</h2>
 

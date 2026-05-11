@@ -60,8 +60,32 @@ function sprawdzFormularz() {
     }
 
     if (poprawny) {
-        var sukces = document.getElementById("sukces");
-        sukces.style.display = "block";
+
+        fetch("/wyslij", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                imie: imie,
+                nazwisko: nazwisko,
+                email: email,
+                wiadomosc: wiadomosc
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            var sukces = document.getElementById("sukces");
+
+            sukces.textContent = "✔ Dane zostały wysłane i zapisane!";
+            sukces.style.display = "block";
+
+            document.getElementById("imie").value = "";
+            document.getElementById("nazwisko").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("wiadomosc").value = "";
+        });
     }
 }
 
